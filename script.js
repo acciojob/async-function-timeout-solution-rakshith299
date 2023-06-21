@@ -3,7 +3,9 @@ const delay = document.getElementById("delay");
 const btn = document.getElementById("btn");
 const output = document.getElementById("output");
 
-//your code here
+function resolve(){
+	output.innerText = message;
+}
 async function showMessage() {
   const message = text.value;
   const delayVal = delay.value;
