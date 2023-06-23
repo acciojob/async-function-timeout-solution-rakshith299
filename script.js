@@ -5,8 +5,8 @@ const output = document.getElementById("output");
 
 async function showMessage() {
   const message = text.value;
-  const delayVal = delay.value;
-  await new Promise((resolve) => setTimeout(resolve, delayVal * 1000));
+  const delayVal = parseInt(delay.value)*1000;
+  await new Promise((resolve) => setTimeout(resolve, delayVal));
   output.innerHTML = message;
 }
 
