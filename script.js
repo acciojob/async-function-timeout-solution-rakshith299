@@ -1,22 +1,22 @@
+ async function showMessage() {
+            const textInput = document.getElementById('text');
+            const delayInput = document.getElementById('delay');
+            const outputDiv = document.getElementById('output');
 
-const btn = document.getElementById("btn");
+            const message = textInput.value;
+            const delay = parseInt(delayInput.value);
 
+            outputDiv.innerText = 'Loading...';
 
-function funcToDelay(delayVal){
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve()
-		}, delayVal);
-	})
-}
-async function showMessage() {
-	const text = document.getElementById("text");
-	const delay = document.getElementById("delay");
-	const output = document.getElementById("output");
-  const message = text.value;
-  const delayVal = parseInt(delay.value)*1000;
-  await funcToDelay(delayVal);
-  output.innerHTML = message;
-}
+            await delayFunction(delay);
+            outputDiv.innerText = message;
+        }
 
-btn.addEventListener("click", showMessage);
+        function delayFunction(delay) {
+            return new Promise(resolve => {
+                setTimeout(resolve, delay);
+            });
+        }
+
+        const button = document.getElementById('btn');
+        button.addEventListener('click', showMessage);
