@@ -6,7 +6,6 @@
             const message = textInput.value;
             const delay = parseInt(delayInput.value);
 
-            outputDiv.innerText = 'Loading...';
 
             await delayFunction(delay);
             outputDiv.innerText = message;
