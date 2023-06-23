@@ -1,7 +1,6 @@
-const text = document.getElementById("text");
-const delay = document.getElementById("delay");
+
 const btn = document.getElementById("btn");
-const output = document.getElementById("output");
+
 
 function funcToDelay(delayVal){
 	return new Promise((resolve, reject) => {
@@ -11,6 +10,9 @@ function funcToDelay(delayVal){
 	})
 }
 async function showMessage() {
+	const text = document.getElementById("text");
+	const delay = document.getElementById("delay");
+	const output = document.getElementById("output");
   const message = text.value;
   const delayVal = parseInt(delay.value)*1000;
   await funcToDelay(delayVal);
